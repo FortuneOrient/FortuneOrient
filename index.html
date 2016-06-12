@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FO&#39;s Opinion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="my weblog, my thought">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FO's Opinion">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="FO's Opinion">
+<meta property="og:description" content="my weblog, my thought">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FO's Opinion">
+<meta name="twitter:description" content="my weblog, my thought">
+  
+    <link rel="alternate" href="/atom.xml" title="FO&#39;s Opinion" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">FO&#39;s Opinion</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">my weblog, my thought</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Linux下的压缩命令简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/12/Linux下的压缩命令简介/" class="article-date">
+  <time datetime="2016-06-12T05:42:54.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/12/Linux下的压缩命令简介/">Linux下的压缩命令简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux 压缩命令简介</p>
+<h1 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h1><p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。</p>
+<p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<p>举例说明：</p>
+<p><code># tar -cf all.tar *.jpg</code><br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。<br><code># tar -rf all.tar *.gif</code><br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。<br><code># tar -uf all.tar logo.gif</code><br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。<br><code># tar -tf all.tar</code><br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思<br><code># tar -xf all.tar</code><br>这条命令是解出all.tar包中所有文件，-x是解开的意思</p>
+<hr>
+<h1 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h1><p><code># tar –cvf jpg.tar *.jpg</code><br>将目录里所有jpg文件打包成tar.jpg<br><code># tar –czf jpg.tar.gz *.jpg</code><br>将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz<br><code># tar –cjf jpg.tar.bz2 *.jpg</code><br>将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2<br><code># tar –cZf jpg.tar.Z *.jpg</code><br>将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z<br><code># zip jpg.zip *.jpg</code><br>zip格式的压缩，需要先下载zip for linux<br><code># rar a jpg.rar *.jpg</code><br>rar格式的压缩，需要先下载rar for linux</p>
+<hr>
+<h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><p><code># tar –xvf file.tar</code> 解压 tar包<br><code># tar -xzvf file.tar.gz</code> 解压tar.gz<br><code># tar -xjvf file.tar.bz2</code> 解压 tar.bz2<br><code># tar –xZvf file.tar.Z</code> 解压tar.Z<br><code># unzip file.zip</code> 解压zip<br><code># unrar e file.rar</code> 解压rar</p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>*.tar 用 <code>tar –xvf</code> 解压</li>
+<li>*.gz 用 <code>gzip -d</code> 或者 <code>gunzip</code> 解压</li>
+<li><em>.tar.gz和</em>.tgz 用 <code>tar –xzf</code> 解压</li>
+<li>*.bz2 用 <code>bzip2 -d</code> 或者用 <code>bunzip2</code> 解压</li>
+<li>*.tar.bz2 用 <code>tar –xjf</code> 解压</li>
+<li>*.Z 用 <code>uncompress</code> 解压</li>
+<li>*.tar.Z 用 <code>tar –xZf</code> 解压</li>
+<li>*.rar 用 <code>unrar e</code> 解压</li>
+<li>*.zip 用 <code>unzip</code> 解压</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/12/Linux下的压缩命令简介/" data-id="cipcb6wq30001i3jfjv0ejipd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux下的压缩命令详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/12/Linux下的压缩命令详解/" class="article-date">
+  <time datetime="2016-06-12T05:31:47.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/12/Linux下的压缩命令详解/">Linux下的压缩命令详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：</p>
+<p>tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：<br><code># tar -cf all.tar *.jpg</code><br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。<br><code># tar -rf all.tar *.gif</code><br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。<br><code># tar -uf all.tar logo.gif</code><br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。<br><code># tar -tf all.tar</code><br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思<br><code># tar -xf all.tar</code><br>这条命令是解出all.tar包中所有文件，-x是解开的意思</p>
+<p>以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。</p>
+<ol>
+<li>tar调用gzip<br>gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：<br><code># tar -czf all.tar.gz *.jpg</code><br>这条命令是将所有.jpg的文件打成一个tar包，并且将其用gzip压缩，生成一个gzip压缩过的包，包名为all.tar.gz<br><code># tar -xzf all.tar.gz</code><br>这条命令是将上面产生的包解开。</li>
+<li>tar调用bzip2<br>bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2压缩的结果。与bzip2相对的解压程序是bunzip2。tar中使用-j这个参数来调用gzip。下面来举例说明一下：<br><code># tar -cjf all.tar.bz2 *.jpg</code><br>这条命令是将所有.jpg的文件打成一个tar包，并且将其用bzip2压缩，生成一个bzip2压缩过的包，包名为all.tar.bz2<br><code># tar -xjf all.tar.bz2</code><br>这条命令是将上面产生的包解开。</li>
+<li>tar调用compress<br>compress也是一个压缩程序，但是好象使用compress的人不如gzip和bzip2的人多。.Z结尾的文件就是compress压缩的结果。与 compress相对的解压程序是uncompress。tar中使用-Z这个参数来调用compress。下面来举例说明一下：<br><code># tar -cZf all.tar.Z *.jpg</code><br>这条命令是将所有.jpg的文件打成一个tar包，并且将其用compress压缩，生成一个uncompress压缩过的包，包名为all.tar.Z<br><code># tar -xZf all.tar.Z</code><br>这条命令是将上面产生的包解开。</li>
+</ol>
+<p>有了上面的知识，你应该可以解开多种压缩文件了，下面对于tar系列的压缩文件作一个小结：</p>
+<ol>
+<li>对于.tar结尾的文件<br><code># tar -xf all.tar</code></li>
+<li>对于.gz结尾的文件<br><code># gzip -d all.gz</code><br><code># gunzip all.gz</code></li>
+<li>对于.tar.gz(或.tgz)结尾的文件<br><code># tar -xzf all.tar.gz</code> (或<code># tar -xzf all.tgz</code>)</li>
+<li>对于.bz2结尾的文件<br><code># bzip2 -d all.bz2</code><br><code># bunzip2 all.bz2</code></li>
+<li>对于tar.bz2结尾的文件<br><code># tar -xjf all.tar.bz2</code></li>
+<li>对于.Z结尾的文件，(似乎无法用compress加参数的方法解压)<br><code># uncompress all.Z</code></li>
+<li>对于.tar.Z结尾的文件<br><code># tar -xZf all.tar.Z</code></li>
+</ol>
+<p>另外对于Window下的常见压缩文件.zip和.rar，Linux也有相应的方法来解压它们：</p>
+<ol>
+<li>对于.zip<br>linux下提供了zip和unzip程序，zip是压缩程序，unzip是解压程序。它们的参数选项很多，这里只做简单介绍，依旧举例说明一下其用法：<br><code># zip all.zip *.jpg</code><br>这条命令是将所有.jpg的文件压缩成一个zip包。<br><code># unzip all.zip</code><br>这条命令是将all.zip中的所有文件解压出来。</li>
+<li>对于.rar<br>要在linux下处理.rar文件，需要安装RAR for Linux，可以从网上下载，但要记住，RAR for Linux 不是免费的。安装后就有了rar和unrar这两个程序，rar是压缩程序，unrar 是解压程序。它们的参数选项很多，这里只做简单介绍，依旧举例说明一下其用法：<br><code># rar a all *.jpg</code><br>这条命令是将所有.jpg的文件压缩成一个rar包，名为all.rar，该程序会将.rar扩展名将自动附加到包名后。<br><code># unrar e all.rar</code><br>这条命令是将all.rar中的所有文件解压出来。</li>
+</ol>
+<p>到此为至，我们已经介绍过linux下的tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、zip、unzip、rar、unrar等程式，你应该已经能够使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行解压了，以后应该不需要为下载了一个软件而不知道如何在Linux下解开而烦恼了。而且以上方法对于Unix也基本有效。</p>
+<p>本文介绍了linux下的压缩程式tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、zip、unzip、rar、unrar等程式，以及如何使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行操作。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/12/Linux下的压缩命令详解/" data-id="cipcb6wq70002i3jfbw4hz0qj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/11/Linux-notes/" class="article-date">
+  <time datetime="2016-06-11T12:20:16.000Z" itemprop="datePublished">2016-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/11/Linux-notes/">Linux notes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>本文摘录Linux常用命令，以备日常查询使用。</em></p>
+<hr>
+<h1 id="实用命令"><a href="#实用命令" class="headerlink" title="实用命令"></a>实用命令</h1><ul>
+<li>清屏<br><code>$clear</code></li>
+<li>调取手册<br><code>$man &lt;命令&gt;</code> （调取与<code>命令</code>相关的手册）</li>
+<li>获取系统时间<br><code>$date</code> （date 是一个系统自带程序，输出当前时间）</li>
+<li>查看当前所处终端<br><code>$tty</code></li>
+<li>查看系统中所有用户<br><code>$who</code> （简写<code>$w</code>）</li>
+<li>字数统计<br><code>$wc &lt;file&gt;</code> （获取<code>file</code>中的行数、单词数、字节数）</li>
+<li>文件分割<br><code>$split</code></li>
+<li>文件更名<br><code>$rename</code></li>
+<li>终端切换<br><code>[Ctrl+Alt+Fn]</code> 其中<code>F7</code>是图形终端</li>
+</ul>
+<hr>
+<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><ul>
+<li>创建目录<br><code>$mkdir &lt;dir&gt;</code><br><code>$mkdir .&lt;dir&gt;</code> （创建隐藏目录）</li>
+<li>删除目录<br><code>$rmdir &lt;dir&gt;</code> （仅能删除空目录，参数<code>-p</code>可以删除级联的空目录）<br><code>$rm -r &lt;dir&gt;</code> （参数<code>-r</code>是递归的意思）</li>
+<li>移动目录<br><code>$mv &lt;dir1&gt; &lt;dir2&gt;</code></li>
+<li>拷贝目录<br><code>$cp -r &lt;dir1&gt; &lt;dir2&gt;</code></li>
+<li>切换目录<br><code>$cd /</code> （切换到根目录）<br><code>$cd ~</code> （切换到home目录）<br><code>$cd -</code> （切换到刚才的目录）<br><code>$cd &lt;path&gt;</code> （切换到绝对路径，<em>path</em>）<br><code>$cd .</code> （切换到当前目录）<br><code>$cd ..</code> （切换到上级目录）<br><code>$cd ./&lt;dir&gt;</code> （切换到子目录，<em>dir</em>）<br><code>$cd &lt;dir&gt;</code> （与 <code>$cd ./&lt;dir&gt;</code> 一致）</li>
+</ul>
+<hr>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
+<li>创建文件<br><code>$touch &lt;file&gt;</code><br><code>$touch .&lt;file&gt;</code> （创建隐藏文件）</li>
+<li>查看文件<br><code>$cat &lt;file&gt;</code> （从第一行开始）<br><code>$tac &lt;file&gt;</code> （从最末行开始，与<em>cat</em>相反）</li>
+<li>部分查看<br><code>$head &lt;file&gt;</code><br><code>$tail &lt;file&gt;</code></li>
+<li>分页查看<br><code>$more &lt;file&gt;</code> （功能简单，已被<em>less</em>替代）<br><code>$less &lt;file&gt;</code> （功能上比<em>more</em>强大）</li>
+<li>查看类型<br><code>$file &lt;file&gt;</code></li>
+<li>删除文件<br><code>$rm &lt;file&gt;</code></li>
+<li>移动文件<br><code>$mv &lt;file&gt; &lt;dir&gt;/</code></li>
+<li>文件改名<br><code>$mv &lt;file1&gt; &lt;file2&gt;</code></li>
+<li>拷贝文件<br><code>$cp &lt;file1&gt; &lt;file2&gt;</code></li>
+<li>文件列表<br><code>$ls</code><br><code>$ls -a</code> （查看隐藏目录和文件）<br><code>$ls -l</code> （查看文件详细信息，也可简写做<code>$ll</code>）</li>
+</ul>
+<hr>
+<h1 id="Ctrl-组合键"><a href="#Ctrl-组合键" class="headerlink" title="[Ctrl]+[组合键]"></a>[Ctrl]+[组合键]</h1><p><code>$[Ctrl]++</code> 放大终端字体<br><code>$[Ctrl]+-</code> 缩小终端字体<br><code>$[Ctrl]+a</code> 移动到命令行首<br><code>$[Ctrl]+e</code> 移动到命令行尾<br><code>$[Ctrl]+u</code> 从当前光标所在位置向前清除命令<br><code>$[Ctrl]+c</code> 输入命令后，取消操作（Cancle）<br><code>$[Ctrl]+l</code> 清屏，与<code>$clear</code>相同</p>
+<hr>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="使用wget"><a href="#使用wget" class="headerlink" title="使用wget"></a>使用wget</h2><p><code>$wget &lt;url&gt;</code></p>
+<h2 id="使用curl"><a href="#使用curl" class="headerlink" title="使用curl"></a>使用curl</h2><p><code>$curl [参数] &lt;url&gt;</code></p>
+<hr>
+<h1 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h1><h2 id="使用zip和unzip"><a href="#使用zip和unzip" class="headerlink" title="使用zip和unzip"></a>使用zip和unzip</h2><ul>
+<li>压缩成zip文件<br><code>$zip -r &lt;zip文件名&gt;.zip &lt;源文件名&gt;</code></li>
+<li>解压缩zip文件<br><code>$unzip &lt;zip文件&gt;</code></li>
+</ul>
+<h2 id="使用tar"><a href="#使用tar" class="headerlink" title="使用tar"></a>使用tar</h2><p><strong>tar</strong></p>
+<ul>
+<li>tar压缩文件<br><code>$tar cvf &lt;包文件名&gt;.tar &lt;源文件名&gt;</code></li>
+<li>解压缩 tar 文件<br><code>$tar xvf &lt;tar文件&gt;</code></li>
+</ul>
+<p><strong>tar gzip</strong></p>
+<ul>
+<li>tar调用gzip <em>[-z]</em><br><code>$tar czvf &lt;包文件名&gt;.tar.gz &lt;源文件名&gt;</code></li>
+<li>解压缩 tar.gz 文件<br><code>$tar xzvf &lt;tar.gz文件&gt;</code></li>
+</ul>
+<p><strong>tar bzip2</strong></p>
+<ul>
+<li>tar调用bzip2 <em>[-j]</em><br><code>$tar cjvf &lt;包文件名&gt;.tar.bz2 &lt;源文件名&gt;</code></li>
+<li>解压缩 tar.bz2 文件<br><code>$tar xjvf &lt;tar.bz2文件&gt;</code></li>
+</ul>
+<p><strong>tar compress</strong></p>
+<ul>
+<li>tar调用compress <em>[-Z]</em><br><code>$tar cZvf &lt;包文件名&gt;.tar.Z &lt;源文件名&gt;</code></li>
+<li>解压缩 tar.Z 文件<br><code>$tar xZvf &lt;tar.Z文件&gt;</code></li>
+</ul>
+<p><strong>以此类推</strong></p>
+<ul>
+<li><em>[-J]</em>，通过xz压缩</li>
+<li><em>[-I]</em>，通过指定程序压缩<br>等等……</li>
+</ul>
+<hr>
+<h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><ul>
+<li>标准输入重定向（redirect stdin）：<code>&lt;</code></li>
+<li>标准输出重定向（redirect stdout）：<code>&gt;</code></li>
+<li>标准错误重定向（redirect stderr）：<code>2&gt;</code></li>
+</ul>
+<p>举例说明“标准输出重定向”：</p>
+<ol>
+<li><code>$&gt;new.txt</code> //建立一个新的文件，文件是空的没有内容</li>
+<li><code>$date &gt;output.txt</code> //将程序的输出内容保存到文件中，</li>
+<li><code>$cat file1 &gt;file2</code> //表示将file1的内容复制到file2中</li>
+<li><code>$cat file1 &gt;&gt;file2</code> //表示将file1的内容追加到file2中</li>
+<li><code>$cat file1 file2 &gt;file3</code> //表示将file1、file2的内容依次复制到file3中</li>
+<li><code>$cat file1 file2 &gt;&gt;file3</code> //表示将file1、file2的内容依次追加到file3中</li>
+</ol>
+<h2 id="‘Everything-is-a-file’"><a href="#‘Everything-is-a-file’" class="headerlink" title="‘Everything is a file’"></a>‘Everything is a file’</h2><p>Linux下有一个传统：Everything is a file。比如说:</p>
+<ul>
+<li>目录就是一个目录文件；</li>
+<li>各种设备都被抽象成了文件，放到了目录文件 /dev 下。</li>
+</ul>
+<p>系统上有三个非常特殊的文件，是一直打开的，分配了固定的文件描述符(file descriptor):</p>
+<ul>
+<li>为0的叫做标准输入文件(stdin);</li>
+<li>为1的叫做标准输出文件(stdout);</li>
+<li>为2的叫做标准错误输出文件(stderr)。</li>
+</ul>
+<hr>
+<h1 id="管道命令"><a href="#管道命令" class="headerlink" title="管道命令"></a>管道命令</h1><p>Linux提供的管道符“|”将两个命令隔开，管道符左边命令的输出就会作为管道符右边命令的输入。<br>常见命令有：</p>
+<ul>
+<li><code>$tr</code> 删除和替换，支持正则。常用参数：<code>-d</code>是删除，<code>-s</code>是替换。</li>
+<li><code>$wc</code> 字数统计</li>
+<li><code>$cut</code> 截取字符</li>
+<li><code>$col</code> 控制字符转换，常用参数：<code>-x</code>，将tab键转换成对等的空格键；<code>-b</code>，过滤掉所有的控制字符。</li>
+<li><code>$tee</code> 将数据输出给文件中的同时，也输出给管道。常使用参数<code>-a</code>，追加输出到文件。</li>
+<li><code>$sort</code> 排序输出</li>
+<li><code>$uniq</code> 去除重复</li>
+<li><code>$grep &lt;keyword&gt;</code> 匹配，支持正则等更高级的功能</li>
+<li><code>$join</code> 将两个文件中指定栏位相同的行连接起来</li>
+<li><code>$split</code> 文件分割</li>
+<li><code>$paste</code> 将两个文件对应行连接在一起</li>
+<li><code>$expand</code> 把 tab 符转换为空格符</li>
+<li><code>$xargs</code> 从标准输入重建并执行命令行</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/11/Linux-notes/" data-id="cipcb6wps0000i3jffxnfidl2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/11/hello-world/" class="article-date">
+  <time datetime="2016-06-11T12:14:13.547Z" itemprop="datePublished">2016-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/11/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/11/hello-world/" data-id="cipcb6wqc0003i3jfbdv9eojk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/12/Linux下的压缩命令简介/">Linux下的压缩命令简介</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/12/Linux下的压缩命令详解/">Linux下的压缩命令详解</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/Linux-notes/">Linux notes</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Fortune Orient<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

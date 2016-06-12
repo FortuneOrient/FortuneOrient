@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux下的压缩命令详解 | FO&#39;s Opinion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：
+tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：# tar -cf all.tar *.jpg这条命令是将所有.jpg的文件打成一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下的压缩命令详解">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/Linux下的压缩命令详解/index.html">
+<meta property="og:site_name" content="FO's Opinion">
+<meta property="og:description" content="Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：
+tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：# tar -cf all.tar *.jpg这条命令是将所有.jpg的文件打成一个">
+<meta property="og:updated_time" content="2016-06-12T05:40:05.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下的压缩命令详解">
+<meta name="twitter:description" content="Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：
+tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：# tar -cf all.tar *.jpg这条命令是将所有.jpg的文件打成一个">
+  
+    <link rel="alternate" href="/atom.xml" title="FO&#39;s Opinion" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">FO&#39;s Opinion</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">my weblog, my thought</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Linux下的压缩命令详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/12/Linux下的压缩命令详解/" class="article-date">
+  <time datetime="2016-06-12T05:31:47.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux下的压缩命令详解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：</p>
+<p>tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：<br><code># tar -cf all.tar *.jpg</code><br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。<br><code># tar -rf all.tar *.gif</code><br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。<br><code># tar -uf all.tar logo.gif</code><br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。<br><code># tar -tf all.tar</code><br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思<br><code># tar -xf all.tar</code><br>这条命令是解出all.tar包中所有文件，-x是解开的意思</p>
+<p>以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。</p>
+<ol>
+<li>tar调用gzip<br>gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：<br><code># tar -czf all.tar.gz *.jpg</code><br>这条命令是将所有.jpg的文件打成一个tar包，并且将其用gzip压缩，生成一个gzip压缩过的包，包名为all.tar.gz<br><code># tar -xzf all.tar.gz</code><br>这条命令是将上面产生的包解开。</li>
+<li>tar调用bzip2<br>bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2压缩的结果。与bzip2相对的解压程序是bunzip2。tar中使用-j这个参数来调用gzip。下面来举例说明一下：<br><code># tar -cjf all.tar.bz2 *.jpg</code><br>这条命令是将所有.jpg的文件打成一个tar包，并且将其用bzip2压缩，生成一个bzip2压缩过的包，包名为all.tar.bz2<br><code># tar -xjf all.tar.bz2</code><br>这条命令是将上面产生的包解开。</li>
+<li>tar调用compress<br>compress也是一个压缩程序，但是好象使用compress的人不如gzip和bzip2的人多。.Z结尾的文件就是compress压缩的结果。与 compress相对的解压程序是uncompress。tar中使用-Z这个参数来调用compress。下面来举例说明一下：<br><code># tar -cZf all.tar.Z *.jpg</code><br>这条命令是将所有.jpg的文件打成一个tar包，并且将其用compress压缩，生成一个uncompress压缩过的包，包名为all.tar.Z<br><code># tar -xZf all.tar.Z</code><br>这条命令是将上面产生的包解开。</li>
+</ol>
+<p>有了上面的知识，你应该可以解开多种压缩文件了，下面对于tar系列的压缩文件作一个小结：</p>
+<ol>
+<li>对于.tar结尾的文件<br><code># tar -xf all.tar</code></li>
+<li>对于.gz结尾的文件<br><code># gzip -d all.gz</code><br><code># gunzip all.gz</code></li>
+<li>对于.tar.gz(或.tgz)结尾的文件<br><code># tar -xzf all.tar.gz</code> (或<code># tar -xzf all.tgz</code>)</li>
+<li>对于.bz2结尾的文件<br><code># bzip2 -d all.bz2</code><br><code># bunzip2 all.bz2</code></li>
+<li>对于tar.bz2结尾的文件<br><code># tar -xjf all.tar.bz2</code></li>
+<li>对于.Z结尾的文件，(似乎无法用compress加参数的方法解压)<br><code># uncompress all.Z</code></li>
+<li>对于.tar.Z结尾的文件<br><code># tar -xZf all.tar.Z</code></li>
+</ol>
+<p>另外对于Window下的常见压缩文件.zip和.rar，Linux也有相应的方法来解压它们：</p>
+<ol>
+<li>对于.zip<br>linux下提供了zip和unzip程序，zip是压缩程序，unzip是解压程序。它们的参数选项很多，这里只做简单介绍，依旧举例说明一下其用法：<br><code># zip all.zip *.jpg</code><br>这条命令是将所有.jpg的文件压缩成一个zip包。<br><code># unzip all.zip</code><br>这条命令是将all.zip中的所有文件解压出来。</li>
+<li>对于.rar<br>要在linux下处理.rar文件，需要安装RAR for Linux，可以从网上下载，但要记住，RAR for Linux 不是免费的。安装后就有了rar和unrar这两个程序，rar是压缩程序，unrar 是解压程序。它们的参数选项很多，这里只做简单介绍，依旧举例说明一下其用法：<br><code># rar a all *.jpg</code><br>这条命令是将所有.jpg的文件压缩成一个rar包，名为all.rar，该程序会将.rar扩展名将自动附加到包名后。<br><code># unrar e all.rar</code><br>这条命令是将all.rar中的所有文件解压出来。</li>
+</ol>
+<p>到此为至，我们已经介绍过linux下的tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、zip、unzip、rar、unrar等程式，你应该已经能够使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行解压了，以后应该不需要为下载了一个软件而不知道如何在Linux下解开而烦恼了。而且以上方法对于Unix也基本有效。</p>
+<p>本文介绍了linux下的压缩程式tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、zip、unzip、rar、unrar等程式，以及如何使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行操作。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/12/Linux下的压缩命令详解/" data-id="cipcb6wq70002i3jfbw4hz0qj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/12/Linux下的压缩命令简介/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux下的压缩命令简介
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/11/Linux-notes/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux notes</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/12/Linux下的压缩命令简介/">Linux下的压缩命令简介</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/12/Linux下的压缩命令详解/">Linux下的压缩命令详解</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/Linux-notes/">Linux notes</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Fortune Orient<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

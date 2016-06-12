@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux notes | FO&#39;s Opinion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文摘录Linux常用命令，已备日常查询使用。
+
+实用命令
+清屏$clear
+调取手册$man &amp;lt;命令&amp;gt; （调取与命令相关的手册）
+获取系统时间$date （date 是一个系统自带程序，输出当前时间）
+查看当前所处终端$tty
+查看系统中所有用户$who （简写$w）
+字数统计$wc &amp;lt;file&amp;gt; （获取file中的行数、单词数、字节数）
+文件分割$split
+文件更名$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux notes">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/Linux-notes/index.html">
+<meta property="og:site_name" content="FO's Opinion">
+<meta property="og:description" content="本文摘录Linux常用命令，已备日常查询使用。
+
+实用命令
+清屏$clear
+调取手册$man &amp;lt;命令&amp;gt; （调取与命令相关的手册）
+获取系统时间$date （date 是一个系统自带程序，输出当前时间）
+查看当前所处终端$tty
+查看系统中所有用户$who （简写$w）
+字数统计$wc &amp;lt;file&amp;gt; （获取file中的行数、单词数、字节数）
+文件分割$split
+文件更名$">
+<meta property="og:updated_time" content="2016-06-12T05:20:40.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux notes">
+<meta name="twitter:description" content="本文摘录Linux常用命令，已备日常查询使用。
+
+实用命令
+清屏$clear
+调取手册$man &amp;lt;命令&amp;gt; （调取与命令相关的手册）
+获取系统时间$date （date 是一个系统自带程序，输出当前时间）
+查看当前所处终端$tty
+查看系统中所有用户$who （简写$w）
+字数统计$wc &amp;lt;file&amp;gt; （获取file中的行数、单词数、字节数）
+文件分割$split
+文件更名$">
+  
+    <link rel="alternate" href="/atom.xml" title="FO&#39;s Opinion" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">FO&#39;s Opinion</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">my weblog, my thought</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Linux-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/12/Linux-notes/" class="article-date">
+  <time datetime="2016-06-12T04:00:00.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux notes
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>本文摘录Linux常用命令，已备日常查询使用。</em></p>
+<hr>
+<h1 id="实用命令"><a href="#实用命令" class="headerlink" title="实用命令"></a>实用命令</h1><ul>
+<li>清屏<br><code>$clear</code></li>
+<li>调取手册<br><code>$man &lt;命令&gt;</code> （调取与<code>命令</code>相关的手册）</li>
+<li>获取系统时间<br><code>$date</code> （date 是一个系统自带程序，输出当前时间）</li>
+<li>查看当前所处终端<br><code>$tty</code></li>
+<li>查看系统中所有用户<br><code>$who</code> （简写<code>$w</code>）</li>
+<li>字数统计<br><code>$wc &lt;file&gt;</code> （获取<code>file</code>中的行数、单词数、字节数）</li>
+<li>文件分割<br><code>$split</code></li>
+<li>文件更名<br><code>$rename</code></li>
+<li>终端切换<br><code>[Ctrl+Alt+Fn]</code> 其中<code>F7</code>是图形终端</li>
+</ul>
+<hr>
+<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><ul>
+<li>创建目录<br><code>$mkdir &lt;dir&gt;</code><br><code>$mkdir .&lt;dir&gt;</code> （创建隐藏目录）</li>
+<li>删除目录<br><code>$rmdir &lt;dir&gt;</code> （仅能删除空目录，参数<code>-p</code>可以删除级联的空目录）<br><code>$rm -r &lt;dir&gt;</code> （参数<code>-r</code>是递归的意思）</li>
+<li>移动目录<br><code>$mv &lt;dir1&gt; &lt;dir2&gt;</code></li>
+<li>拷贝目录<br><code>$cp -r &lt;dir1&gt; &lt;dir2&gt;</code></li>
+<li>切换目录<br><code>$cd /</code> （切换到根目录）<br><code>$cd ~</code> （切换到home目录）<br><code>$cd -</code> （切换到刚才的目录）<br><code>$cd &lt;path&gt;</code> （切换到绝对路径，<em>path</em>）<br><code>$cd .</code> （切换到当前目录）<br><code>$cd ..</code> （切换到上级目录）<br><code>$cd ./&lt;dir&gt;</code> （切换到子目录，<em>dir</em>）<br><code>$cd &lt;dir&gt;</code> （与 <code>$cd ./&lt;dir&gt;</code> 一致）</li>
+</ul>
+<hr>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
+<li>创建文件<br><code>$touch &lt;file&gt;</code><br><code>$touch .&lt;file&gt;</code> （创建隐藏文件）</li>
+<li>查看文件<br><code>$cat &lt;file&gt;</code> （从第一行开始）<br><code>$tac &lt;file&gt;</code> （从最末行开始，与<em>cat</em>相反）</li>
+<li>部分查看<br><code>$head &lt;file&gt;</code><br><code>$tail &lt;file&gt;</code></li>
+<li>分页查看<br><code>$more &lt;file&gt;</code> （功能简单，已被<em>less</em>替代）<br><code>$less &lt;file&gt;</code> （功能上比<em>more</em>强大）</li>
+<li>查看类型<br><code>$file &lt;file&gt;</code></li>
+<li>删除文件<br><code>$rm &lt;file&gt;</code></li>
+<li>移动文件<br><code>$mv &lt;file&gt; &lt;dir&gt;/</code></li>
+<li>文件改名<br><code>$mv &lt;file1&gt; &lt;file2&gt;</code></li>
+<li>拷贝文件<br><code>$cp &lt;file1&gt; &lt;file2&gt;</code></li>
+<li>文件列表<br><code>$ls</code><br><code>$ls -a</code> （查看隐藏目录和文件）<br><code>$ls -l</code> （查看文件详细信息，也可简写做<code>$ll</code>）</li>
+</ul>
+<hr>
+<h1 id="Ctrl-组合键"><a href="#Ctrl-组合键" class="headerlink" title="[Ctrl]+[组合键]"></a>[Ctrl]+[组合键]</h1><p><code>$[Ctrl]++</code> 放大终端字体<br><code>$[Ctrl]+-</code> 缩小终端字体<br><code>$[Ctrl]+a</code> 移动到命令行首<br><code>$[Ctrl]+e</code> 移动到命令行尾<br><code>$[Ctrl]+u</code> 从当前光标所在位置向前清除命令<br><code>$[Ctrl]+c</code> 输入命令后，取消操作（Cancle）<br><code>$[Ctrl]+l</code> 清屏，与<code>$clear</code>相同</p>
+<hr>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="使用wget"><a href="#使用wget" class="headerlink" title="使用wget"></a>使用wget</h2><p><code>$wget &lt;url&gt;</code></p>
+<h2 id="使用curl"><a href="#使用curl" class="headerlink" title="使用curl"></a>使用curl</h2><p><code>$curl [参数] &lt;url&gt;</code></p>
+<hr>
+<h1 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h1><h2 id="使用zip和unzip"><a href="#使用zip和unzip" class="headerlink" title="使用zip和unzip"></a>使用zip和unzip</h2><ul>
+<li>压缩成zip文件<br><code>$zip -r &lt;zip文件名&gt;.zip &lt;源文件名&gt;</code></li>
+<li>解压缩zip文件<br><code>$unzip &lt;zip文件&gt;</code></li>
+</ul>
+<h2 id="使用tar"><a href="#使用tar" class="headerlink" title="使用tar"></a>使用tar</h2><p><strong>tar</strong></p>
+<ul>
+<li>tar压缩文件<br><code>$tar cvf &lt;包文件名&gt;.tar &lt;源文件名&gt;</code></li>
+<li>解压缩 tar 文件<br><code>$tar xvf &lt;tar文件&gt;</code></li>
+</ul>
+<p><strong>tar gzip</strong></p>
+<ul>
+<li>tar调用gzip <em>[-z]</em><br><code>$tar czvf &lt;包文件名&gt;.tar.gz &lt;源文件名&gt;</code></li>
+<li>解压缩 tar.gz 文件<br><code>$tar xzvf &lt;tar.gz文件&gt;</code></li>
+</ul>
+<p><strong>tar bzip2</strong></p>
+<ul>
+<li>tar调用bzip2 <em>[-j]</em><br><code>$tar cjvf &lt;包文件名&gt;.tar.bz2 &lt;源文件名&gt;</code></li>
+<li>解压缩 tar.bz2 文件<br><code>$tar xjvf &lt;tar.bz2文件&gt;</code></li>
+</ul>
+<p><strong>tar compress</strong></p>
+<ul>
+<li>tar调用compress <em>[-Z]</em><br><code>$tar cZvf &lt;包文件名&gt;.tar.Z &lt;源文件名&gt;</code></li>
+<li>解压缩 tar.Z 文件<br><code>$tar xZvf &lt;tar.Z文件&gt;</code></li>
+</ul>
+<p><strong>以此类推的还</strong></p>
+<ul>
+<li><em>[-J]</em>，通过xz压缩</li>
+<li><em>[-I]</em>，通过指定程序压缩<br>等等……</li>
+</ul>
+<hr>
+<h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><ul>
+<li>标准输入重定向（redirect stdin）：<code>&lt;</code></li>
+<li>标准输出重定向（redirect stdout）：<code>&gt;</code></li>
+<li>标准错误重定向（redirect stderr）：<code>2&gt;</code></li>
+</ul>
+<p>举例说明“标准输出重定向”：</p>
+<ol>
+<li><code>$&gt;new.txt</code> //建立一个新的文件，文件是空的没有内容</li>
+<li><code>$date &gt;output.txt</code> //将程序的输出内容保存到文件中，</li>
+<li><code>$cat file1 &gt;file2</code> //表示将file1的内容复制到file2中</li>
+<li><code>$cat file1 &gt;&gt;file2</code> //表示将file1的内容追加到file2中</li>
+<li><code>$cat file1 file2 &gt;file3</code> //表示将file1、file2的内容依次复制到file3中</li>
+<li><code>$cat file1 file2 &gt;&gt;file3</code> //表示将file1、file2的内容依次追加到file3中</li>
+</ol>
+<h2 id="‘Everything-is-a-file’"><a href="#‘Everything-is-a-file’" class="headerlink" title="‘Everything is a file’"></a>‘Everything is a file’</h2><p>Linux下有一个传统：Everything is a file。比如说:</p>
+<ul>
+<li>目录就是一个目录文件；</li>
+<li>各种设备都被抽象成了文件，放到了目录文件 /dev 下。</li>
+</ul>
+<p>系统上有三个非常特殊的文件，是一直打开的，分配了固定的文件描述符(file descriptor):</p>
+<ul>
+<li>为0的叫做标准输入文件(stdin);</li>
+<li>为1的叫做标准输出文件(stdout);</li>
+<li>为2的叫做标准错误输出文件(stderr)。</li>
+</ul>
+<hr>
+<h1 id="管道命令"><a href="#管道命令" class="headerlink" title="管道命令"></a>管道命令</h1><p>Linux提供的管道符“|”将两个命令隔开，管道符左边命令的输出就会作为管道符右边命令的输入。<br>常见命令有：</p>
+<ul>
+<li><code>$tr</code> 删除和替换，支持正则。常用参数：<code>-d</code>是删除，<code>-s</code>是替换。</li>
+<li><code>$wc</code> 字数统计</li>
+<li><code>$cut</code> 截取字符</li>
+<li><code>$col</code> 控制字符转换，常用参数：<code>-x</code>，将tab键转换成对等的空格键；<code>-b</code>，过滤掉所有的控制字符。</li>
+<li><code>$tee</code> 将数据输出给文件中的同时，也输出给管道。常使用参数<code>-a</code>，追加输出到文件。</li>
+<li><code>$sort</code> 排序输出</li>
+<li><code>$uniq</code> 去除重复</li>
+<li><code>$grep &lt;keyword&gt;</code> 匹配，支持正则等更高级的功能</li>
+<li><code>$join</code> 将两个文件中指定栏位相同的行连接起来</li>
+<li><code>$split</code> 文件分割</li>
+<li><code>$paste</code> 将两个文件对应行连接在一起</li>
+<li><code>$expand</code> 把 tab 符转换为空格符</li>
+<li><code>$xargs</code> 从标准输入重建并执行命令行</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/12/Linux-notes/" data-id="cipb8qcbw0000qxjf7ikfsel1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/12/Linux-notes/">Linux notes</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Fortune Orient<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
