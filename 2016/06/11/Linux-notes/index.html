@@ -1,125 +1,282 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Linux notes | FO&#39;s Opinion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文摘录Linux常用命令，以备日常查询使用。
+<!doctype html>
 
-实用命令
-清屏$clear
-调取手册$man &amp;lt;命令&amp;gt; （调取与命令相关的手册）
-获取系统时间$date （date 是一个系统自带程序，输出当前时间）
-查看当前所处终端$tty
-查看系统中所有用户$who （简写$w）
-字数统计$wc &amp;lt;file&amp;gt; （获取file中的行数、单词数、字节数）
-文件分割$split
-文件更名$">
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文摘录Linux常用命令，以备日常查询使用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux notes">
 <meta property="og:url" content="http://fortuneorient.github.io/2016/06/11/Linux-notes/index.html">
 <meta property="og:site_name" content="FO's Opinion">
-<meta property="og:description" content="本文摘录Linux常用命令，以备日常查询使用。
-
-实用命令
-清屏$clear
-调取手册$man &amp;lt;命令&amp;gt; （调取与命令相关的手册）
-获取系统时间$date （date 是一个系统自带程序，输出当前时间）
-查看当前所处终端$tty
-查看系统中所有用户$who （简写$w）
-字数统计$wc &amp;lt;file&amp;gt; （获取file中的行数、单词数、字节数）
-文件分割$split
-文件更名$">
-<meta property="og:updated_time" content="2016-06-12T06:03:10.916Z">
+<meta property="og:description" content="本文摘录Linux常用命令，以备日常查询使用。">
+<meta property="og:updated_time" content="2016-06-13T08:03:20.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux notes">
-<meta name="twitter:description" content="本文摘录Linux常用命令，以备日常查询使用。
+<meta name="twitter:description" content="本文摘录Linux常用命令，以备日常查询使用。">
 
-实用命令
-清屏$clear
-调取手册$man &amp;lt;命令&amp;gt; （调取与命令相关的手册）
-获取系统时间$date （date 是一个系统自带程序，输出当前时间）
-查看当前所处终端$tty
-查看系统中所有用户$who （简写$w）
-字数统计$wc &amp;lt;file&amp;gt; （获取file中的行数、单词数、字节数）
-文件分割$split
-文件更名$">
-  
-    <link rel="alternate" href="/atom.xml" title="FO&#39;s Opinion" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://fortuneorient.github.io/2016/06/11/Linux-notes/"/>
+
+  <title> Linux notes | FO's Opinion </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">FO&#39;s Opinion</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">my weblog, my thought</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fortuneorient.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Linux-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/11/Linux-notes/" class="article-date">
-  <time datetime="2016-06-11T12:20:16.000Z" itemprop="datePublished">2016-06-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Linux notes
-    </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
 
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">FO's Opinion</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">my weblog, my thought</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Linux notes
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-11T20:20:16+08:00" content="2016-06-11">
+              2016-06-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p><em>本文摘录Linux常用命令，以备日常查询使用。</em></p>
+      
+
+      
+        <p>本文摘录Linux常用命令，以备日常查询使用。<br><a id="more"></a></p>
 <hr>
 <h1 id="实用命令"><a href="#实用命令" class="headerlink" title="实用命令"></a>实用命令</h1><ul>
 <li>清屏<br><code>$clear</code></li>
@@ -163,28 +320,23 @@
 <li>压缩成zip文件<br><code>$zip -r &lt;zip文件名&gt;.zip &lt;源文件名&gt;</code></li>
 <li>解压缩zip文件<br><code>$unzip &lt;zip文件&gt;</code></li>
 </ul>
-<h2 id="使用tar"><a href="#使用tar" class="headerlink" title="使用tar"></a>使用tar</h2><p><strong>tar</strong></p>
-<ul>
+<h2 id="使用tar"><a href="#使用tar" class="headerlink" title="使用tar"></a>使用tar</h2><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><ul>
 <li>tar压缩文件<br><code>$tar cvf &lt;包文件名&gt;.tar &lt;源文件名&gt;</code></li>
 <li>解压缩 tar 文件<br><code>$tar xvf &lt;tar文件&gt;</code></li>
 </ul>
-<p><strong>tar gzip</strong></p>
-<ul>
+<h3 id="tar-gzip"><a href="#tar-gzip" class="headerlink" title="tar gzip"></a>tar gzip</h3><ul>
 <li>tar调用gzip <em>[-z]</em><br><code>$tar czvf &lt;包文件名&gt;.tar.gz &lt;源文件名&gt;</code></li>
 <li>解压缩 tar.gz 文件<br><code>$tar xzvf &lt;tar.gz文件&gt;</code></li>
 </ul>
-<p><strong>tar bzip2</strong></p>
-<ul>
+<h3 id="tar-bzip2"><a href="#tar-bzip2" class="headerlink" title="tar bzip2"></a>tar bzip2</h3><ul>
 <li>tar调用bzip2 <em>[-j]</em><br><code>$tar cjvf &lt;包文件名&gt;.tar.bz2 &lt;源文件名&gt;</code></li>
 <li>解压缩 tar.bz2 文件<br><code>$tar xjvf &lt;tar.bz2文件&gt;</code></li>
 </ul>
-<p><strong>tar compress</strong></p>
-<ul>
+<h3 id="tar-compress"><a href="#tar-compress" class="headerlink" title="tar compress"></a>tar compress</h3><ul>
 <li>tar调用compress <em>[-Z]</em><br><code>$tar cZvf &lt;包文件名&gt;.tar.Z &lt;源文件名&gt;</code></li>
 <li>解压缩 tar.Z 文件<br><code>$tar xZvf &lt;tar.Z文件&gt;</code></li>
 </ul>
-<p><strong>以此类推</strong></p>
-<ul>
+<h3 id="以此类推"><a href="#以此类推" class="headerlink" title="以此类推"></a>以此类推</h3><ul>
 <li><em>[-J]</em>，通过xz压缩</li>
 <li><em>[-I]</em>，通过指定程序压缩<br>等等……</li>
 </ul>
@@ -203,7 +355,7 @@
 <li><code>$cat file1 file2 &gt;file3</code> //表示将file1、file2的内容依次复制到file3中</li>
 <li><code>$cat file1 file2 &gt;&gt;file3</code> //表示将file1、file2的内容依次追加到file3中</li>
 </ol>
-<h2 id="‘Everything-is-a-file’"><a href="#‘Everything-is-a-file’" class="headerlink" title="‘Everything is a file’"></a>‘Everything is a file’</h2><p>Linux下有一个传统：Everything is a file。比如说:</p>
+<p><strong>‘Everything is a file’</strong><br>Linux下有一个传统：Everything is a file。比如说:</p>
 <ul>
 <li>目录就是一个目录文件；</li>
 <li>各种设备都被抽象成了文件，放到了目录文件 /dev 下。</li>
@@ -234,116 +386,247 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://fortuneorient.github.io/2016/06/11/Linux-notes/" data-id="cipcgou570000q4jf62vz40kd" class="article-share-link">Share</a>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
       
       
     </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
-  
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<nav id="article-nav">
-  
-    <a href="/2016/06/12/Linux下的压缩命令详解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+  </div>
+
+
+        </div>
         
-          Linux下的压缩命令详解
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Fortune Orient" />
+          <p class="site-author-name" itemprop="name">Fortune Orient</p>
+          <p class="site-description motion-element" itemprop="description">my weblog, my thought</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实用命令"><span class="nav-number">1.</span> <span class="nav-text">实用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录操作"><span class="nav-number">2.</span> <span class="nav-text">目录操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作"><span class="nav-number">3.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ctrl-组合键"><span class="nav-number">4.</span> <span class="nav-text">[Ctrl]+[组合键]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载"><span class="nav-number">5.</span> <span class="nav-text">下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用wget"><span class="nav-number">5.1.</span> <span class="nav-text">使用wget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用curl"><span class="nav-number">5.2.</span> <span class="nav-text">使用curl</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#压缩"><span class="nav-number">6.</span> <span class="nav-text">压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用zip和unzip"><span class="nav-number">6.1.</span> <span class="nav-text">使用zip和unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用tar"><span class="nav-number">6.2.</span> <span class="nav-text">使用tar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tar"><span class="nav-number">6.2.1.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-gzip"><span class="nav-number">6.2.2.</span> <span class="nav-text">tar gzip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-bzip2"><span class="nav-number">6.2.3.</span> <span class="nav-text">tar bzip2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-compress"><span class="nav-number">6.2.4.</span> <span class="nav-text">tar compress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以此类推"><span class="nav-number">6.2.5.</span> <span class="nav-text">以此类推</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重定向"><span class="nav-number">7.</span> <span class="nav-text">重定向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管道命令"><span class="nav-number">8.</span> <span class="nav-text">管道命令</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-    <a href="/2016/06/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+    </main>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-</article>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fortune Orient</span>
+</div>
 
-</section>
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
         
-          <aside id="sidebar">
-  
-    
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/06/12/Linux下的压缩命令简介/">Linux下的压缩命令简介</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/12/Linux下的压缩命令详解/">Linux下的压缩命令详解</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/11/Linux-notes/">Linux notes</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/11/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 Fortune Orient<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
-    
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
 
 
-<script src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  </div>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
 </body>
 </html>
